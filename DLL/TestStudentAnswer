@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS public."TestStudentAnswer"
+(
+    surname text COLLATE pg_catalog."default" NOT NULL,
+    name text COLLATE pg_catalog."default" NOT NULL,
+    date date NOT NULL,
+    answer1 text COLLATE pg_catalog."default" NOT NULL,
+    answer2 text COLLATE pg_catalog."default" NOT NULL,
+    answer3 text COLLATE pg_catalog."default" NOT NULL,
+    answer4 text COLLATE pg_catalog."default" NOT NULL,
+    answer5 text COLLATE pg_catalog."default" NOT NULL
+)
