@@ -1,11 +1,12 @@
-CREATE TABLE IF NOT EXISTS public."TestStudentAnswer"
+CREATE TABLE IF NOT EXISTS public.answers
 (
-    surname text COLLATE pg_catalog."default" NOT NULL,
-    name text COLLATE pg_catalog."default" NOT NULL,
-    date date NOT NULL,
-    answer1 text COLLATE pg_catalog."default" NOT NULL,
-    answer2 text COLLATE pg_catalog."default" NOT NULL,
-    answer3 text COLLATE pg_catalog."default" NOT NULL,
-    answer4 text COLLATE pg_catalog."default" NOT NULL,
-    answer5 text COLLATE pg_catalog."default" NOT NULL
+    "answerID" numeric NOT NULL,
+    answer text COLLATE pg_catalog."default" NOT NULL,
+    "resultID" numeric NOT NULL,
+    CONSTRAINT answers_pkey PRIMARY KEY ("answerID"),
+    CONSTRAINT "resultID" FOREIGN KEY ("resultID")
+        REFERENCES public.results ("resultID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
 )

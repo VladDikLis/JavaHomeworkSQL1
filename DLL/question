@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS public.question
+(
+    "questionID" numeric NOT NULL,
+    answer1 text COLLATE pg_catalog."default" NOT NULL,
+    answer2 text COLLATE pg_catalog."default" NOT NULL,
+    answer3 text COLLATE pg_catalog."default" NOT NULL,
+    answer4 text COLLATE pg_catalog."default",
+    answer5 text COLLATE pg_catalog."default",
+    "currentAnswer" text COLLATE pg_catalog."default" NOT NULL,
+    "testID" numeric,
+    CONSTRAINT question_pkey PRIMARY KEY ("questionID"),
+    CONSTRAINT "testID" FOREIGN KEY ("testID")
+        REFERENCES public.tests ("testID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)

@@ -1,11 +1,6 @@
-CREATE TABLE IF NOT EXISTS public."TestData"
+CREATE TABLE IF NOT EXISTS public.tests
 (
-    id numeric NOT NULL,
-    question text COLLATE pg_catalog."default" NOT NULL,
-    answer1 text COLLATE pg_catalog."default" NOT NULL,
-    answer2 text COLLATE pg_catalog."default" NOT NULL,
-    answer3 text COLLATE pg_catalog."default",
-    answer4 text COLLATE pg_catalog."default",
-    answer5 text COLLATE pg_catalog."default",
-    "rightAnswer" text COLLATE pg_catalog."default" NOT NULL
+    "testID" numeric NOT NULL,
+    name text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT tests_pkey PRIMARY KEY ("testID")
 )
