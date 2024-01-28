@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS public.students
+(
+    "studentID" numeric NOT NULL,
+    name text COLLATE pg_catalog."default" NOT NULL,
+    surname text COLLATE pg_catalog."default" NOT NULL,
+    "group" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT students_pkey PRIMARY KEY ("studentID")
+)

@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS public.answers
+(
+    "answerID" numeric NOT NULL,
+    answer text COLLATE pg_catalog."default" NOT NULL,
+    "resultID" numeric NOT NULL,
+    CONSTRAINT answers_pkey PRIMARY KEY ("answerID"),
+    CONSTRAINT "resultID" FOREIGN KEY ("resultID")
+        REFERENCES public.results ("resultID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)
